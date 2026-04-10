@@ -11,7 +11,7 @@ CARPETA_DATOS = "data"
 TABLA_SQL = "ventas"
 
 #anonimizacion de datos
-MODO_ANONIMO = False 
+MODO_ANONIMO = True 
 
 def imprimir_banner():
     print("\n" + "="*60)
