@@ -1,0 +1,20 @@
+# Entorno virtual
+.venv/
+__pycache__/
+*.pyc
+
+# Sensible: Credenciales
+.env
+
+# Sensible: Datos originales
+data/
+data_agregar/
+ventas.db*
+inspect_output.txt
+
+# Otros
+.python-version
+uv.lock
+maxi.pptx
+*.SVG
+*.svg
