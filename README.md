@@ -1,15 +1,49 @@
 # 📊 Pipeline de Análisis de Ventas Retail
 > **Proyecto End-to-End: Automatización de Ingesta, Limpieza y Visualización de Datos.**
 
-Este proyecto resuelve el desafío de consolidar datos de ventas dispersos en múltiples archivos Excel para un negocio minorista, transformándolos en una base de datos relacional y un dashboard interactivo para la toma de decisiones.
+Este proyecto resuelve el desafío de consolidar datos de ventas dispersos en múltiples archivos Excel para el negocio Maxikiosco RT, transformándolos en una base de datos relacional y un dashboard interactivo para la toma de decisiones.
 
 ---
 
 ## 🧭 Escenario de Negocio
-Un negocio con múltiples rubros (Almacén, Bebidas, Lácteos, etc.) genera reportes mensuales independientes. La falta de consolidación impedía identificar rápidamente productos rentables, tendencias mensuales y márgenes por categoría.
+
+Un negocio minorista con múltiples categorías (Almacén, Bebidas, Lácteos, etc.) genera reportes mensuales independientes en Excel.
+
+### Problema
+* Datos fragmentados en múltiples archivos
+* Alto tiempo de consolidación manual
+* Falta de visibilidad sobre:
+    * Rentabilidad por producto
+    * Evolución de ventas
+    * Performance por categoría
 
 ### Solución:
-Un pipeline automatizado en Python que extrae, limpia, normaliza y carga los datos en **PostgreSQL**, permitiendo un análisis SQL profundo y visualización en **Power BI**.
+Se implementa un pipeline automatizado en Python que:
+
+* Extrae datos desde **múltiples archivos Excel**
+* Limpia y estandariza la información
+* Consolida los datos en una base relacional en **PostgreSQL**
+* Permite análisis mediante **SQL**
+* Alimenta un dashboard en **Power BI**
+
+### 🎯 Resultados Clave
+* Reducción del tiempo de consolidación: de **horas a segundos** (antes esto me tomaba horas cada mes, ahora solo segundos)
+* Procesamiento automatizado de múltiples archivos mensuales
+* Mejora en la calidad del dato mediante validaciones y limpieza
+* Base preparada para análisis escalable (nuevos meses sin reprocesos completos)
+
+---
+
+## 📊 Visualización
+El dashboard se encuentra en la carpeta `/dashboard`. 
+- Dashboard general
+![Dashboard general](dashboard/dashboard_general.png)
+![Dashboard general](dashboard/dashboard_general_2.png)
+- Dashboard productos
+![Dashboard productos](dashboard/dashboard_productos.png)
+![Dashboard productos](dashboard/dashboard_productos_2.png)
+
+*(Nota: Para abrirlo correctamente en otra PC, asegúrate de actualizar el origen de datos en Power BI para que apunte a tu instancia local de PostgreSQL).*
 
 ---
 
@@ -18,7 +52,7 @@ Un pipeline automatizado en Python que extrae, limpia, normaliza y carga los dat
 | :--- | :--- |
 | **Lenguaje** | Python 3.13 |
 | **Librerías** | Pandas, NumPy, SQLAlchemy |
-| **Base de Datos** | PostgreSQL (Docker/Local) |
+| **Base de Datos** | PostgreSQL |
 | **Visualización** | Power BI |
 | **Entorno** | .env para gestión de credenciales |
 
@@ -68,20 +102,6 @@ Para cargar los datos en la base de datos:
 ```bash
 python main.py
 ```
-
----
-
-## 📊 Visualización
-El dashboard se encuentra en la carpeta `/dashboard`. 
-- Dashboard general
-![Dashboard general](dashboard/_dashboard_general.png)
-![Dashboard general](dashboard/_dashboard_general_2.png)
-- Dashboard productos
-![Dashboard productos](dashboard/_dashboard_productos.png)
-![Dashboard productos](dashboard/_dashboard_productos_2.png)
-
-*(Nota: Para abrirlo correctamente en otra PC, asegúrate de actualizar el origen de datos en Power BI para que apunte a tu instancia local de PostgreSQL).*
-
 ---
 
 ## 💡 Impacto y Aprendizajes
@@ -90,4 +110,6 @@ El dashboard se encuentra en la carpeta `/dashboard`.
 * **Escalabilidad**: El sistema está preparado para crecer con el negocio mes a mes.
 
 ---
-*Desarrollado como proyecto de portafolio para demostrar habilidades en Data Engineering y BI.*
+#aclaraciones finales
+* Los datos originales no se incluyen en el repositorio por motivos de tamaño y privacidad.
+* Todos los datos vistos en las imagenes del dashboard no son datos reales, fueron tratados por medio de una anonimización de datos.
