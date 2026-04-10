@@ -73,6 +73,13 @@ python main.py
 
 ## 📊 Visualización
 El dashboard se encuentra en la carpeta `/dashboard`. 
+- Dashboard general
+![Dashboard general](dashboard/_dashboard_general.png)
+![Dashboard general](dashboard/_dashboard_general_2.png)
+- Dashboard productos
+![Dashboard productos](dashboard/_dashboard_productos.png)
+![Dashboard productos](dashboard/_dashboard_productos_2.png)
+
 *(Nota: Para abrirlo correctamente en otra PC, asegúrate de actualizar el origen de datos en Power BI para que apunte a tu instancia local de PostgreSQL).*
 
 ---
